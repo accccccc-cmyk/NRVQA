@@ -683,13 +683,6 @@ if __name__ == "__main__":
 
 
         if val_PLCC > best_val_criterion:
-            t_list = []
-            t_list.append(t_index)
-            t_list.append(t_pred)
-            t_list.append(t_val)
-            np.savetxt('t_list.csv', t_list, delimiter=',')
-            y_list = np.column_stack((y_index, y_pred, y_val))
-            np.savetxt('y_list.csv', y_list, delimiter=',')
             print("EXP ID={}: Update best model using best_val_criterion in epoch {}".format(args.exp_id, epoch))
             print("Val results: val loss={:.4f}, SROCC={:.4f}, KROCC={:.4f}, PLCC={:.4f}, RMSE={:.4f}"
                   .format(val_loss, val_SROCC, val_KROCC, val_PLCC, val_RMSE))
